@@ -1,6 +1,20 @@
-<% layout('boilerplate') -%>
-<h1>I am the <%= what %> </h1>
-<p>
-<a href="/simplesso/login">Login</a>
-<a href="/simplesso/login">Logout</a>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("head", {title: "Home | SSO Server"}) %>
+    <body>
+        <div class="grid h-screen place-items-center bg-gray-900 text-white">
+            <div class="flex flex-col items-center">
+                <h1 class="text-2xl font-bold mb-4">SSO Server Login Portal</h1>
+                <% if (name) { %>
+                <h1 class="text-xl font-semibold">Hello <%= name %></h1>
+                <% } else { %>
+                <a
+                    href="/auth/login"
+                    class="font-semibold px-8 py-2 rounded-lg bg-green-600 hover:bg-green-500 w-full text-center"
+                    >Login</a
+                >
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>
